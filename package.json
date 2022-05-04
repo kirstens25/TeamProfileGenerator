@@ -1,0 +1,24 @@
+{
+  "name": "teamprofilegenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kirstens25/TeamProfileGenerator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kirstens25/TeamProfileGenerator/issues"
+  },
+  "homepage": "https://github.com/kirstens25/TeamProfileGenerator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "installer": "^0.0.1",
+    "jest": "^28.0.3"
+  }
+}
