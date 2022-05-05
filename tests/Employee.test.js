@@ -1,5 +1,6 @@
 // heading
 
+const Employee = require("../Lib/Employee");
 // sub
 
 // content
@@ -10,16 +11,11 @@ describe('Testing Employee Class', () => {
 
         // check whether we can create object from class
         test('whether we can create object from class', () => {
-            const employee = new Employee()
-            
-            // set up environment
-            // define truth
+            const employee = new Employee(52, 'steve', 'great@email.com')
 
-            // run the code
+            expect(employee).toBeInstanceOf(Employee);
+            expect(employee).toBeInstanceOf(Object);
 
-            // compare the result
-
-            expect(true).toBe(false);
         });
         // resulting in expected outcome
         test('if employee has entered name', () => {
@@ -28,9 +24,16 @@ describe('Testing Employee Class', () => {
         });
 
         test('Employee class constructor to accept 3 args (id, name, email)', () => {
+            const employee = new Employee(52, 'steve', 'great@email.com')
 
-
+        });
             test('if employee has entered email', () => {
+                // set up environment
+                // define truth
+
+                // run the code
+
+                // compare the result
                 expect(true).toBe(false);
 
             });
@@ -66,4 +69,3 @@ describe('Testing Employee Class', () => {
             });
         });
     });
-});
