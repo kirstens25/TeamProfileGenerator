@@ -1,10 +1,7 @@
-// heading
-
+// get 'Employee' class from separate folder
 const Employee = require("../Lib/Employee");
-// sub
 
-// content
-
+// Test Employee Class
 describe('Testing Employee Class', () => {
 
     describe('Employee class contains requested attribute methods', () => {
@@ -22,7 +19,8 @@ describe('Testing Employee Class', () => {
             expect(employee).toBeInstanceOf(Object);
         });
 
-        test('should fail if it didn not pass in 3 arguments', () => {
+        // make test fail if 3 arguments are not passed in
+        test('should fail if it did not pass in 3 arguments', () => {
             expect(() => new Employee()).toThrow(Error),
                 expect(() => new Employee(defaultId)).toThrow(Error),
                 expect(() => new Employee(defaultId, defaultName)).toThrow(Error),
@@ -31,7 +29,7 @@ describe('Testing Employee Class', () => {
         });
 
 
-        // resulting in expected outcome
+        // test with expected outcome
         test('if employee has entered name', () => {
             const testName = "Sarah";
             const employee = new Employee(testName);
@@ -39,7 +37,7 @@ describe('Testing Employee Class', () => {
         });
 
         test('if employee has entered id', () => {
-            const testId = "3221";
+            const testId = "250";
             const employee = new Employee("name", testId);
             expect(employee.id).toBe(testId);
 
@@ -47,7 +45,7 @@ describe('Testing Employee Class', () => {
 
         test('if employee has entered email', () => {
             const testEmail = "sarah@email.com";
-            const employee = new Employee("name", 21, testEmail);
+            const employee = new Employee("name", 250, testEmail);
             expect(employee.email).toBe(testEmail);
 
         });
@@ -56,7 +54,22 @@ describe('Testing Employee Class', () => {
             const testName = "Sarah";
             const employee = new Employee(testName);
             expect(employee.getName()).toBe(testName);
+        })
 
-        },
-        )
-    })})
+        test('whether getId() returns inputted id', () => {
+            const testId = 250;
+            const employee = new Employee("name", testId);
+            expect(employee.getId()).toBe(testId);
+        })
+
+        test('whether getEmail) returns inputted email', () => {
+            const testEmail = "sarah@email.com";
+            const employee = new Employee("name", 250, testEmail);
+            expect(employee.getEmail()).toBe(testEmail);
+        })
+        test('getrole() should display string of employee')
+            const role = "Employee";
+            const employee = new Employee("Sarah", 250, "sarah@email.com");
+            expect(employee.getRole()).toBe(testValue);
+    });
+});
