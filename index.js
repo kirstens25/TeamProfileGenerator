@@ -8,9 +8,11 @@ const Engineer = require('./lib/Engineer');
 const Intern = require ('./lib/Intern');
 const Manager = require('./lib/Manager');
 
+// answer array for questions
+const staffDataQuestion = [];
 
 // Ask questions for new staff member
-const staffDataQuestion = async () => {
+const questions = async () => {
     const answers = await inquirer
     .prompt([
     {
@@ -38,7 +40,6 @@ const staffDataQuestion = async () => {
 }
 
 // Differentiate questions for different roles
-
 // if manager selected, prompt additional questions
 if (answers.role === "Manager"){
     const managerAns = await inquirer
@@ -112,7 +113,22 @@ async function promptQuestions() {
             choices: ['add new staff member']
         }
     ])
+
+    if (addStaffAns.addStaff === 'Add new member'){
+        return promptQuestions()
+    }
+    return createTeam();
 }
 
+promptQuestions();
+
+function createTeam () {
+    console.log("new staff", staffDataQuestion)
+    fs.writeFileSync(
+        "./output/index.html",
+        generateTeam(staffDataQuestion),
+        "utf-8"
+    );
+}
 
 

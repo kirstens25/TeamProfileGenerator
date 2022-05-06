@@ -19,16 +19,6 @@ describe('Testing Employee Class', () => {
             expect(employee).toBeInstanceOf(Object);
         });
 
-        // make test fail if 3 arguments are not passed in
-        test('should fail if it did not pass in 3 arguments', () => {
-            expect(() => new Employee()).toThrow(Error),
-                expect(() => new Employee(defaultId)).toThrow(Error),
-                expect(() => new Employee(defaultId, defaultName)).toThrow(Error),
-
-                expect(new Employee(defaultName, defaultId, defaultName)).toBeInstanceOf(Employee);
-        });
-
-
         // test with expected outcome
         test('if employee has entered name', () => {
             const testName = "Sarah";
