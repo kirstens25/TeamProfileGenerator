@@ -1,7 +1,7 @@
 // node requirements
 const inquirer = require ('inquirer');
 const fs = require ('fs');
-const createColleagues = ('./src/setup-page.js');
+const createColleagues = require('./src/setup-page.js');
 
 // library
 const Engineer = require('./lib/Engineer');
@@ -31,13 +31,12 @@ const questions = async () => {
         name: "email",
     },
     {
-        type: "input",
+        type: "list",
         message: "What is your role?",
         name: "role",
         choices: ["Engineer", "Intern", "Manager"],
     },
     ])
-}
 
 // Differentiate questions for different roles
 // if manager selected, prompt additional questions
@@ -101,6 +100,7 @@ if (answers.role === "Intern"){
         staffDataQuestion.push(newEngineer);
     }
 };
+}
 
 async function promptQuestions() {
     await questions()
@@ -110,7 +110,8 @@ async function promptQuestions() {
         {
             name: 'addStaff',
             type: 'list',
-            choices: ['add new staff member']
+            choices: ['add new staff member', 'finish & create team'],
+            message: 'what would you like to do now?'
         }
     ])
 
@@ -125,8 +126,8 @@ promptQuestions();
 function createTeam () {
     console.log("new staff", staffDataQuestion)
     fs.writeFileSync(
-        "./output/index.html",
-        generateTeam(staffDataQuestion),
+        "./dist/index.html",
+        createColleagues(staffDataQuestion),
         "utf-8"
     );
 }

@@ -1,5 +1,5 @@
 // create staff members
-const createStaff = (team) => {
+const createColleagues = (team) => {
     // generate html for manager cards
     const createManager = (manager) => {
         return `
@@ -102,7 +102,7 @@ return `
   <div class="container">
       <div class="row">
           <div class="team-area col-12 d-flex justify-content-center">
-              ${createStaff(team)}
+              ${createColleagues(team)}
           </div>
       </div>
   </div>
