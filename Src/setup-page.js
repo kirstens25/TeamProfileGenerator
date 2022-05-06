@@ -24,13 +24,13 @@ const createIntern = (intern) => {
     <div class="card employee-card">
         <div class="card-header">
             <h2 class="card-title">${intern.getName()}</h2>
-            <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>${manager.getRole()}</h3>
+            <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>${intern.getRole()}</h3>
             </div>
             <div class="card-body">
                 <ul class="list-group">
                     <li class="list-group-item">ID: ${intern.getId()}</li>
                     <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
-                    <li class="list-group-item">Office number: ${intern.getSchool()}</li>
+                    <li class="list-group-item">School Name: ${intern.getSchool()}</li>
                     </ul>
             </div>
         </div>
@@ -48,7 +48,7 @@ const createEngineer = (engineer) => {
                 <ul class="list-group">
                     <li class="list-group-item">ID: ${engineer.getId()}</li>
                     <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
-                    <li class="list-group-item">Office number: ${engineer.getGithub()}</li>
+                    <li class="list-group-item"> Github: ${engineer.getGithub()}</li>
                     </ul>
             </div>
         </div>
